@@ -19,6 +19,8 @@ const getEnvs = (): EnvsI => {
     DB_USERNAME: value.DB_USERNAME,
     DB_PASSWORD: value.DB_PASSWORD,
     BROKER_HOSTS: value.BROKER_HOSTS,
+    UPLOAD_IMAGE_SERVICE_URL: value.UPLOAD_IMAGE_SERVICE_URL,
+    SALTS: value.SALTS,
   };
 };
 

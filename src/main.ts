@@ -14,7 +14,7 @@ async function bootstrap() {
         transport: Transport.RMQ,
         options: {
           urls: envsValues.BROKER_HOSTS,
-          queue: USER_SERVICE_OPTIONS.USER_SERVICE_NAME,
+          queue: USER_SERVICE_OPTIONS.USER_QUEUE,
           queueOptions: {
             durable: true,
           },
