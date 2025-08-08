@@ -50,8 +50,11 @@ export class PersonRepositoryImpl implements PersonRepository {
                             municipality: true, 
                             settlementType: true, 
                             zipcode: true, 
-                            town: true
-                        }
+                            town: true,
+                        },
+                        roles: {
+                            role: true
+                        },
                     }
                 }
             );
