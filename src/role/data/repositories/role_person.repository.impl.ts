@@ -33,4 +33,15 @@ export class RolePersonRepositoryImpl implements RolePersonRepository {
             });
         }
     }
+
+    async findOne(id: number): Promise<RolePersonI> {
+        try {
+            return await this.rolePersonRepository.findOneOrFail({where: {id}, relations: {person: true, role: true}});
+        } catch (error) {
+            throw new RpcException({
+                message: error.message,
+                status: HttpStatus.BAD_REQUEST
+            });
+        }
+    }
 }
