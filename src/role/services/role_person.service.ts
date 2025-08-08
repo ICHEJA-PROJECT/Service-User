@@ -21,4 +21,15 @@ export class RolePersonService {
             });
         }
     }
+
+    async findOne(id: number) {
+        try {
+            return await this.rolePersonRepository.findOne(id);
+        } catch (error) {
+            throw new RpcException({
+                message: error.message,
+                status: HttpStatus.BAD_REQUEST,
+            });
+        }
+    }
 }

@@ -27,6 +27,10 @@ import { RolePersonService } from "./services/role_person.service";
         RolePersonRepositoryImpl,
         RoleService,
         RolePersonService,
+    ],
+    exports: [
+        TypeOrmModule,
+        RolePersonService
     ]
 })
 export class RoleModule {}

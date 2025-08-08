@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { envsValues } from './core/config/getEnvs';
 import { PersonModule } from './person/person.module';
 import { RoleModule } from './role/role.module';
+import { ScheduleModule } from './schedule/schedule.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { RoleModule } from './role/role.module';
     }),
     PersonModule,
     RoleModule,
+    ScheduleModule,
   ],
   controllers: [],
   providers: [],

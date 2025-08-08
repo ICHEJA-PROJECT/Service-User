@@ -25,4 +25,12 @@ export const USER_SERVICE_OPTIONS = {
 
     //! ---------------- Role Person controllers ----------------
     ROLE_PERSON_CREATE: 'rolePerson.create',
+
+    //! ---------------- Schedule controllers ----------------
+    SCHEDULE_CREATE: 'schedule.create',
+    SCHEDULE_FIND_ALL: 'schedule.findAll',
+
+    //! ---------------- Schedule Person controllers ----------------
+    SCHEDULE_PERSON_CREATE: 'schedulePerson.create',
+    SCHEDULE_PERSON_FIND_BY_PERSON: 'schedulePerson.findByPerson',
 };
