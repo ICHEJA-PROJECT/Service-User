@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { envsValues } from './core/config/getEnvs';
 import { PersonModule } from './person/person.module';
+import { RoleModule } from './role/role.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { PersonModule } from './person/person.module';
       synchronize: true,
       logging: true
     }),
-    PersonModule
+    PersonModule,
+    RoleModule,
   ],
   controllers: [],
   providers: [],

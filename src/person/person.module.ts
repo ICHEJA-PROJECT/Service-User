@@ -61,6 +61,8 @@ import { TownService } from "./services/town.service";
         MunicipalityService,
         TownService,
     ],
-    exports: []
+    exports: [
+        TypeOrmModule
+    ]
 })
 export class PersonModule {}

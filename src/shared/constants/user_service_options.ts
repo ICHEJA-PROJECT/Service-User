@@ -18,4 +18,11 @@ export const USER_SERVICE_OPTIONS = {
 
     //! ---------------- Town controllers ----------------
     TOWN_FIND_BY_MUNICIPALITY: 'town.findByMunicipality',
+
+    //! ---------------- Role controllers ----------------
+    ROLE_CREATE: 'role.create',
+    ROLE_FIND_ALL: 'role.findAll',
+
+    //! ---------------- Role Person controllers ----------------
+    ROLE_PERSON_CREATE: 'rolePerson.create',
 };
