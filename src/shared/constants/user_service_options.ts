@@ -33,4 +33,10 @@ export const USER_SERVICE_OPTIONS = {
     //! ---------------- Schedule Person controllers ----------------
     SCHEDULE_PERSON_CREATE: 'schedulePerson.create',
     SCHEDULE_PERSON_FIND_BY_PERSON: 'schedulePerson.findByPerson',
+
+    //! ---------------- Student controllers ---------------
+    STUDENT_CREATE: 'student.create',
+    STUDENT_FIND_BY_TEACHER: 'student.findByTeacher',
+    STUDENT_FIND_BY_CURP: 'student.findByCurp',
+    STUDENT_FIND_BY_NAME: 'student.findByName',
 };

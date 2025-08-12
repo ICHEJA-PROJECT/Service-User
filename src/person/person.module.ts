@@ -1,5 +1,4 @@
 import { Module } from "@nestjs/common";
-import { UploadImageTransport } from "./transports/upload-image.transport";
 import { PersonController } from "./controllers/person.controller";
 import { PersonRepositoryImpl } from "./data/repositories/person.repository.impl";
 import { PersonService } from "./services/person.service";
@@ -25,6 +24,7 @@ import { MunicipalityService } from "./services/municipality.service";
 import { TownController } from "./controllers/town.controller";
 import { TownRepositoryImpl } from "./data/repositories/town.repository.impl";
 import { TownService } from "./services/town.service";
+import { UploadImageTransport } from "src/shared/transports/upload-image.transport";
 
 @Module({
     imports: [

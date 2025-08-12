@@ -22,7 +22,7 @@ async function bootstrap() {
       },
     );
     await app.listen();
-    logger.log('Exercise microservice is running...');
+    logger.log('User microservice is running...');
   } catch (error) {
     logger.error('Error starting Exercise microservice', error);
   }

@@ -4,6 +4,7 @@ import { envsValues } from './core/config/getEnvs';
 import { PersonModule } from './person/person.module';
 import { RoleModule } from './role/role.module';
 import { ScheduleModule } from './schedule/schedule.module';
+import { StudentModule } from './student/student.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { ScheduleModule } from './schedule/schedule.module';
     PersonModule,
     RoleModule,
     ScheduleModule,
+    StudentModule,
   ],
   controllers: [],
   providers: [],

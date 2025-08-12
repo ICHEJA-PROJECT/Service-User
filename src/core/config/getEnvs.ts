@@ -21,6 +21,9 @@ const getEnvs = (): EnvsI => {
     BROKER_HOSTS: value.BROKER_HOSTS,
     UPLOAD_IMAGE_SERVICE_URL: value.UPLOAD_IMAGE_SERVICE_URL,
     SALTS: value.SALTS,
+    ENCRYPTION_KEY: value.ENCRYPTION_KEY,
+    JWT_SECRET: value.JWT_SECRET,
+    JWT_EXPIRATION: value.JWT_EXPIRATION,
   };
 };
 
