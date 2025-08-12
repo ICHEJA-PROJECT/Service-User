@@ -1,11 +1,13 @@
 import { PersonI } from "src/person/domain/entitiesI/PersonI";
 import { RoadTypeI } from "src/person/domain/entitiesI/RoadTypeI";
 import { SettlementI } from "src/person/domain/entitiesI/SettlementI";
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { RoadTypeEntity } from "./road_type.entity";
 import { SettlementEntity } from "./settlement.entity";
 import { RolePersonI } from "src/role/domain/entitiesI/RolePersonI";
 import { RolePersonEntity } from "src/role/data/entities/role-person.entity";
+import { StudentI } from "src/student/domain/entitiesI/StudentI";
+import { StudentEntity } from "src/student/data/entities/student.entity";
 
 @Entity('persona')
 export class PersonEntity implements PersonI {
@@ -41,4 +43,6 @@ export class PersonEntity implements PersonI {
     profileImagePath: string;
     @OneToMany(() => RolePersonEntity, rolePerson => rolePerson.person)
     roles: RolePersonI[];
+    @OneToOne(() => StudentEntity, student => student.person, { nullable: true})
+    student?: StudentI | undefined;
 }

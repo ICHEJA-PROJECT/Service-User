@@ -1,6 +1,7 @@
 import { RolePersonI } from "src/role/domain/entitiesI/RolePersonI";
 import { RoadTypeI } from "./RoadTypeI";
 import { SettlementI } from "./SettlementI";
+import { StudentI } from "src/student/domain/entitiesI/StudentI";
 
 export interface PersonI {
     id: number;
@@ -18,4 +19,5 @@ export interface PersonI {
     password: string;
     profileImagePath: string;
     roles: RolePersonI[];
+    student?: StudentI;
 }
