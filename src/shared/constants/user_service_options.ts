@@ -39,4 +39,19 @@ export const USER_SERVICE_OPTIONS = {
     STUDENT_FIND_BY_TEACHER: 'student.findByTeacher',
     STUDENT_FIND_BY_CURP: 'student.findByCurp',
     STUDENT_FIND_BY_NAME: 'student.findByName',
+
+    //! ---------------- Institution controllers ---------------
+    INSTITUTION_CREATE: 'institution.create',
+    INSTITUTION_FIND_ALL: 'isntitution.findAll',
+    INSTITUTION_FIND_BY_ID: 'institution.findById',
+
+    //! ---------------- Cell controllers ---------------
+    CELL_CREATE: 'cell.create',
+    CELL_FIND_ALL: 'cell.findAll',
+    CELL_FIND_BY_INSTITUTION: 'cell.findByInstitution',
+    CELL_FIND_BY_COORDINATOR: 'cell.findByCoordinator',
+    CELL_FIND_ONE: 'cell.findOne',
+
+    //! ---------------- Teacher Cell controllers ---------------
+    TEACHER_CELL_CREATE: 'teacherCell.create',
 };

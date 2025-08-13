@@ -5,6 +5,7 @@ import { PersonModule } from './person/person.module';
 import { RoleModule } from './role/role.module';
 import { ScheduleModule } from './schedule/schedule.module';
 import { StudentModule } from './student/student.module';
+import { CellModule } from './cell/cell.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { StudentModule } from './student/student.module';
     RoleModule,
     ScheduleModule,
     StudentModule,
+    CellModule
   ],
   controllers: [],
   providers: [],
