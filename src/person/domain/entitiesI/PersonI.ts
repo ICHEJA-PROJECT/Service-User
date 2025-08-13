@@ -2,6 +2,7 @@ import { RolePersonI } from "src/role/domain/entitiesI/RolePersonI";
 import { RoadTypeI } from "./RoadTypeI";
 import { SettlementI } from "./SettlementI";
 import { StudentI } from "src/student/domain/entitiesI/StudentI";
+import { CellI } from "src/cell/domain/entitiesI/CellI";
 
 export interface PersonI {
     id: number;
@@ -20,4 +21,5 @@ export interface PersonI {
     profileImagePath: string;
     roles: RolePersonI[];
     student?: StudentI;
+    cells?: CellI[];
 }

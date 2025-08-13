@@ -8,6 +8,8 @@ import { RolePersonI } from "src/role/domain/entitiesI/RolePersonI";
 import { RolePersonEntity } from "src/role/data/entities/role-person.entity";
 import { StudentI } from "src/student/domain/entitiesI/StudentI";
 import { StudentEntity } from "src/student/data/entities/student.entity";
+import { CellI } from "src/cell/domain/entitiesI/CellI";
+import { CellEntity } from "src/cell/data/entities/cell.entity";
 
 @Entity('persona')
 export class PersonEntity implements PersonI {
@@ -45,4 +47,6 @@ export class PersonEntity implements PersonI {
     roles: RolePersonI[];
     @OneToOne(() => StudentEntity, student => student.person, { nullable: true})
     student?: StudentI | undefined;
+    @OneToMany(() => CellEntity, cell => cell.coordinator, { nullable: true})
+    cells?: CellI[] | undefined;
 }
