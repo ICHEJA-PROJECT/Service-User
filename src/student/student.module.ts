@@ -14,6 +14,7 @@ import { EncryptDataRepositoryImpl } from "./data/repositories/encryptData.repos
 import { QRRepositoryImpl } from "./data/repositories/qr.repository.impl";
 import { ProgenitorRepositoryImpl } from "./data/repositories/progenitor.repository.impl";
 import { ProgenitorService } from "./services/progenitor.service";
+import { RoleModule } from "src/role/role.module";
 
 @Module({
     imports: [
@@ -28,7 +29,8 @@ import { ProgenitorService } from "./services/progenitor.service";
         }),
         PersonModule,
         PreferencesServiceTransport,
-        UploadImageTransport
+        UploadImageTransport,
+        RoleModule
     ],
     controllers: [
         StudentController

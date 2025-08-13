@@ -62,7 +62,8 @@ import { UploadImageTransport } from "src/shared/transports/upload-image.transpo
         TownService,
     ],
     exports: [
-        TypeOrmModule
+        TypeOrmModule, 
+        PersonService,
     ]
 })
 export class PersonModule {}

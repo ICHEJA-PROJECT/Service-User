@@ -15,6 +15,8 @@ import { base64ToBuffer } from "src/shared/utils/base64ToBuffer";
 import * as FormData from 'form-data';
 import { RegisterStudentResponseAdapter } from "../data/adapters/register-student.adapter";
 import { ProgenitorService } from "./progenitor.service";
+import { PersonService } from "src/person/services/person.service";
+import { RolePersonService } from "src/role/services/role_person.service";
 
 export class StudentService {
     constructor(
@@ -29,13 +31,26 @@ export class StudentService {
         @Inject(QRRepositoryImpl)
         private readonly qrRepository: QRRepository,
         private readonly progenitorService: ProgenitorService,
+        private readonly personService: PersonService,
+        private readonly rolePersonService: RolePersonService,
     ) {}
 
     async create(createStudentDto: CreateStudentDto) {
         try {
 
+            if(createStudentDto.teacherId) {
+                const teacher = await this.personService.findOne(createStudentDto.teacherId);
+                const teacherRol = teacher.roles.find(roleItem => roleItem.role.id === 2);
+                if(!teacherRol) throw new RpcException({
+                    message: 'La persona como educador, no cuenta con ese rol.',
+                    status: HttpStatus.CONFLICT,
+                });
+            }
+
             await this.progenitorService.create(createStudentDto.father);
             await this.progenitorService.create(createStudentDto.mother);
+
+            await this.rolePersonService.create({ roleId: 1, personId: createStudentDto.personId});
 
             const student = await this.studentRepository.create(createStudentDto);
 
