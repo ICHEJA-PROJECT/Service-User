@@ -5,4 +5,9 @@ export interface EnvsI {
     DB_USERNAME: string;
     DB_PASSWORD: string;
     BROKER_HOSTS: string[];
+    UPLOAD_IMAGE_SERVICE_URL: string;
+    SALTS: number;
+    ENCRYPTION_KEY: string;
+    JWT_SECRET: string;
+    JWT_EXPIRATION: string;
 }

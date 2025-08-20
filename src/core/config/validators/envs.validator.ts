@@ -15,4 +15,9 @@ export const envsValidator = Joi.object<EnvsI>({
     .items(Joi.string())
     .required()
     .description('Hosts of the message broker'),
+  UPLOAD_IMAGE_SERVICE_URL: Joi.string().required(),
+  SALTS: Joi.number().required(),
+  ENCRYPTION_KEY: Joi.string().required(),
+  JWT_SECRET: Joi.string().required(),
+  JWT_EXPIRATION: Joi.string().required(),
 }).unknown(true);
