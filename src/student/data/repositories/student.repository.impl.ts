@@ -125,4 +125,33 @@ export class StudentRepositoryImpl implements StudentRepository {
             });
         }
     }
+
+    async findOne(id: number): Promise<StudentI> {
+        try {
+            return await this.studentRepository.findOneOrFail({where: {id}, relations: {father: true, mother: true, person: true}});
+        } catch (error) {
+            throw new RpcException({
+                message: error.message,
+                status: HttpStatus.BAD_REQUEST,
+            });
+        }
+    }
+
+    async findUniqueNames(): Promise<any[]> {
+        try {
+            const result = await this.studentRepository
+                .createQueryBuilder('student')
+                .leftJoin('student.person', 'person')
+                .select('DISTINCT person.firstName', 'name')
+                .limit(10)
+                .getRawMany();
+            
+            return result.map(row => row.name);
+        } catch (error) {
+            throw new RpcException({
+                message: error.message,
+                status: HttpStatus.BAD_REQUEST,
+            });
+        }
+    }
 }
