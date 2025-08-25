@@ -29,4 +29,15 @@ export class StudentController {
     async findByName(@Payload() name: string) {
         return await this.studentService.findByName(name);
     }
+
+    @MessagePattern({ cmd: USER_SERVICE_OPTIONS.STUDENT_FIND_BY_ID})
+    async findOne(@Payload() id: number) {
+        return await this.studentService.findOne(id);
+    }
+
+    @MessagePattern({ cmd: USER_SERVICE_OPTIONS.STUDENT_FIND_UNIQUE_NAMES })
+    async findUniqueNames() {
+        return await this.studentService.findStudentNames();
+    }
+
 }

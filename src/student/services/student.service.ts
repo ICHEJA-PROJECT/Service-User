@@ -99,7 +99,11 @@ export class StudentService {
             const qrCodeBuffer = base64ToBuffer(qrImageBase64);
 
             const formData = new FormData();
-            const fileName = `${student.id}-qr.png`;
+            const shortTimestamp = new Date().toISOString()
+                .replace(/[:.]/g, '-')
+                .replace('T', '-')
+                .substring(0, 16);
+            const fileName = `${student.id}-qr-${shortTimestamp}.png`;
             formData.append('file', qrCodeBuffer, {filename: fileName});
             formData.append('fileName', fileName);
             formData.append('folder', 'qr-images');
@@ -156,6 +160,28 @@ export class StudentService {
         try {
             const [firstName, paternalSurname] = name.split(" ");
             return await this.studentRepository.findByName(firstName, paternalSurname);
+        } catch (error) {
+            throw new RpcException({
+                message: error.message,
+                status: HttpStatus.BAD_REQUEST,
+            });
+        }
+    }
+
+    async findOne(id: number) {
+        try {
+            return await this.studentRepository.findOne(id);
+        } catch (error) {
+            throw new RpcException({
+                message: error.message,
+                status: HttpStatus.BAD_REQUEST,
+            });
+        }
+    }
+
+    async findStudentNames() {
+        try {
+            return await this.studentRepository.findUniqueNames();
         } catch (error) {
             throw new RpcException({
                 message: error.message,

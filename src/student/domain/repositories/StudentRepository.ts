@@ -7,4 +7,6 @@ export interface StudentRepository {
     updateQrPath(studentId: number, pathImageQr: string): Promise<void>;
     findByCurp(curp: string): Promise<StudentI[]>;
     findByName(firstName: string, paternalSurname: string): Promise<StudentI[]>;
+    findOne(id: number): Promise<StudentI>;
+    findUniqueNames(): Promise<any[]>;
 }
