@@ -39,6 +39,8 @@ export const USER_SERVICE_OPTIONS = {
     STUDENT_FIND_BY_TEACHER: 'student.findByTeacher',
     STUDENT_FIND_BY_CURP: 'student.findByCurp',
     STUDENT_FIND_BY_NAME: 'student.findByName',
+    STUDENT_FIND_BY_ID: 'student.findById',
+    STUDENT_FIND_UNIQUE_NAMES: 'student.findUniqueNames',
 
     //! ---------------- Institution controllers ---------------
     INSTITUTION_CREATE: 'institution.create',
